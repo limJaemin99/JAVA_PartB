@@ -1,0 +1,75 @@
+day16
+
+-------------------------------------------------------------------
+Bike.java 소스파일에
+
+public class Bike{}
+class Electronics{}
+
+- public 클래스는 소스파일명과 같아야합니다.
+- public 이 없는 Electronics 는 접근권한이 default
+	ex) 다른 패키지에서 Bike는 임포트하여 사용가능
+		그러나 Electronics는 Ctrl+Space에서 아예 뜨지도 않음 (사용불가하기때문)
+접근한정자가 default는 같은 패키지만 사용가능
+
+-------------------------------------------------------------------
+★★★ getter, setter 은 private일때만 사용하기 ★★★
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+★★★ ArrayList 정리 ★★★
+-------------------------------------------------------------------
+# ArrayList
+자료구조에는 List, Set, Map이 있다.
+
+선언 예시
+ArrayList<Integer>list = new ArrayList<>();
+
+1.값 대입/불러오기 - add/get
+값 대입
+list.add(값);	// index 0에 값 대입list.add(값);	// index 1에 값 대입
+list.add(값);	// index 2에 값 대입
+     ...		//    ...
+
+값 불러오기
+list.get(int index)	//해당 index의 값 return
+
+2. 리스트의 크기 - size
+list.size() 로 쓴다.
+배열처럼 .length()는 사용하지 않는다.
+
+3. 출력
+1) index 하나씩 출력
+for문이나 for-each문으로 돌려서 출력
+for(int num : list){
+   sys.out(list)
+}
+2) 한번에 출력
+sys.out(list);
+
+4. 특정 위치의 데이터를 추가/제거 - add/remove
+list.add(int index , 값)	// 해당 index에 값을 대입
+			// 뒤로 한칸씩 밀림 (배열 길이+1)
+list.remove(int index)	//해당 index의 값을 삭제
+			// 한칸씩 땡겨짐(배열 길이-1)
+list.remove(Integer.valueOf(11))	//배열 중 11 값을 가진 index를 삭제
+				//제일 먼저 나오는 index 하나만 삭제
+while(list.remove(Integer.valueOf(11)))	//배열 중 11을 전부 삭제
+				//boolean 타입이므로 while문 사용
+
+5. List에 저장된 데이터 찾기 - contains/indexOf
+list.contains(값)	//'값'이 리스트에 존재하는지?
+list.indexOf(값)	//'값'이 리스트 내 몇번째 index에 존재하는지?
+-------------------------------------------------------------------
+
+## ArrayList 메소드
+set(int index , 값) : 지정된 index의 값을 변경
+isEmpty() : 비어있으면 true, 아닐시 false
+clear() : 모든 요소를 삭제
+toArray() : 배열로 변환
+iterator() : 반복하는데 사용할 수 있는 Iterator를 반환 (리스트를 순차적으로 접근하고 수정 가능한 목적으로 사용) 
+
+
+
+
+
